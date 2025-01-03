@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Tian&#39;s Website</title>
+    <title>Posts on Tian&#39;s</title>
     <link>https://luvisdaisy.github.io/posts/</link>
-    <description>Recent content in Posts on Tian&#39;s Website</description>
+    <description>Recent content in Posts on Tian&#39;s</description>
     <generator>Hugo -- 0.140.2</generator>
-    <language>zh</language>
+    <language>en-us</language>
     <lastBuildDate>Fri, 03 Jan 2025 20:42:53 +1100</lastBuildDate>
     <atom:link href="https://luvisdaisy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -27,16 +27,17 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;git环境&#34;&gt;Git环境&lt;/h2&gt;
 &lt;p&gt;在Git官网下载并安装最新版Git，在终端中验证&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git --version
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注册并配置 GitHub&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   git --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注册并配置 GitHub&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;注册 GitHub 账号（如果还没有）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;配置 Git 本地环境：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global user.name &amp;#34;你的GitHub用户名&amp;#34;
-git config --global user.email &amp;#34;你的GitHub邮箱&amp;#34;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  git config --global user.name &amp;#34;你的GitHub用户名&amp;#34;
+  git config --global user.email &amp;#34;你的GitHub邮箱&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;创建hugo项目&#34;&gt;创建Hugo项目&lt;/h2&gt;
@@ -67,14 +68,7 @@ git submodule update --init --recursive
 &lt;p&gt;编辑 &lt;code&gt;content/posts/my-first-post.md&lt;/code&gt; 文件，修改内容。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;确保 &lt;code&gt;draft&lt;/code&gt; 设置为 &lt;code&gt;false&lt;/code&gt;：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;draft: false
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;本地预览&lt;/p&gt;
-&lt;p&gt;启动 Hugo 本地服务器：&lt;/p&gt;</description>
+&lt;p&gt;确保 &lt;code&gt;draft&lt;/code&gt; 设置为 &lt;code&gt;false&lt;/code&gt;：&lt;/p&gt;</description>
     </item>
     <item>
       <title>First Post</title>
