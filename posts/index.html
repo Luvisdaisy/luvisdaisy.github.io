@@ -135,6 +135,35 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Build Website With Hugo and Github
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Hugo &#43; GitHub Page搭建个人主页 Hugo环境 在GitHub仓库下载最新发行包
+https://github.com/gohugoio/hugo
+解压至Hugo文件夹
+将该文件夹添加到系统环境变量中
+Git环境 在Git官网下载并安装最新版Git，在终端中验证
+git --version 注册并配置 GitHub
+注册 GitHub 账号（如果还没有）。
+配置 Git 本地环境：
+git config --global user.name &#34;你的GitHub用户名&#34; git config --global user.email &#34;你的GitHub邮箱&#34; 创建Hugo项目 导航至要创建网页的文件夹，在cmd中输入
+hugo new site my-website cd my-website 选择并安装主题（以PaperMod为例）
+在my-website中运行
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule update --init --recursive 在config.yml中添加：
+theme: [&#34;PaperMod&#34;] 创建页面内容
+创建一个新页面： hugo new posts/my-first-post.md 编辑 content/posts/my-first-post.md 文件，修改内容。
+确保 draft 设置为 false：
+draft: false 本地预览
+启动 Hugo 本地服务器：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-01-03 20:42:53 +1100 AEDT'>January 8, 30353</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;165 words&nbsp;·&nbsp;Me</footer>
+  <a class="entry-link" aria-label="post link to Build Website With Hugo and Github" href="https://luvisdaisy.github.io/posts/build-website-with-hugo-and-github/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">First Post
     </h2>
   </header>

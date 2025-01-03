@@ -6,8 +6,76 @@
     <description>Recent content on Tian&#39;s Website</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 03 Jan 2025 18:24:03 +1100</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2025 20:42:53 +1100</lastBuildDate>
     <atom:link href="https://luvisdaisy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build Website With Hugo and Github</title>
+      <link>https://luvisdaisy.github.io/posts/build-website-with-hugo-and-github/</link>
+      <pubDate>Fri, 03 Jan 2025 20:42:53 +1100</pubDate>
+      <guid>https://luvisdaisy.github.io/posts/build-website-with-hugo-and-github/</guid>
+      <description>&lt;h1 id=&#34;hugo--github-page搭建个人主页&#34;&gt;Hugo + GitHub Page搭建个人主页&lt;/h1&gt;
+&lt;h2 id=&#34;hugo环境&#34;&gt;Hugo环境&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在GitHub仓库下载最新发行包&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;https://github.com/gohugoio/hugo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压至Hugo文件夹&lt;/p&gt;
+&lt;p&gt;将该文件夹添加到系统环境变量中&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;git环境&#34;&gt;Git环境&lt;/h2&gt;
+&lt;p&gt;在Git官网下载并安装最新版Git，在终端中验证&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git --version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注册并配置 GitHub&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;注册 GitHub 账号（如果还没有）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置 Git 本地环境：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global user.name &amp;#34;你的GitHub用户名&amp;#34;
+git config --global user.email &amp;#34;你的GitHub邮箱&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;创建hugo项目&#34;&gt;创建Hugo项目&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;导航至要创建网页的文件夹，在cmd中输入&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new site my-website
+cd my-website
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择并安装主题（以PaperMod为例）&lt;/p&gt;
+&lt;p&gt;在my-website中运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+git submodule update --init --recursive
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;code&gt;config.yml&lt;/code&gt;中添加：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;theme: [&amp;#34;PaperMod&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建页面内容&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建一个新页面：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new posts/my-first-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;编辑 &lt;code&gt;content/posts/my-first-post.md&lt;/code&gt; 文件，修改内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确保 &lt;code&gt;draft&lt;/code&gt; 设置为 &lt;code&gt;false&lt;/code&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;draft: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;本地预览&lt;/p&gt;
+&lt;p&gt;启动 Hugo 本地服务器：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>First Post</title>
       <link>https://luvisdaisy.github.io/posts/first-post/</link>
