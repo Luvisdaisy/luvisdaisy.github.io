@@ -135,6 +135,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Tailwind in React
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>关于在Vite &#43; React中使用TailwindCSS 安装Tailwind Css npm install -D tailwindcss postcss autoprefixer npx tailwindcss init 配置tailwind.config.js文件 /** @type {import(&#39;tailwindcss&#39;).Config} */ export default { content: [&#34;./index.html&#34;, &#34;./src/**/*.{js,ts,jsx,tsx}&#34;], theme: { extend: {}, }, plugins: [], } 在src/index.css中引入： @tailwind base; @tailwind components; @tailwind utilities; 在vite.config.js中配置 import tailwindcss from &#39;tailwindcss&#39; import autoprefixer from &#39;autoprefixer&#39; export default defineConfig({ css: { postcss: { plugins: [ tailwindcss, autoprefixer ] } } }) </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-01-04 17:06:33 +1100 AEDT'>January 5, 40433</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;64 words&nbsp;·&nbsp;Tian</footer>
+  <a class="entry-link" aria-label="post link to Tailwind in React" href="https://luvisdaisy.github.io/posts/tailwind-in-react/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Build Website With Hugo and Github
     </h2>
   </header>
