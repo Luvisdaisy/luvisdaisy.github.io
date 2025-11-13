@@ -1,14 +1,12 @@
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Layout from '../components/Layout'
 import TechStack from '../components/TechStack'
 
 function Home() {
   return (
-    <div>
-      <Header />
+    <Layout>
       <div
-        className='hero min-h-screen'
+        className='hero h-full'
         style={{
           backgroundImage: 'url(./img/hero.jpeg)',
         }}
@@ -25,9 +23,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* <TechStack /> */}
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
