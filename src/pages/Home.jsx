@@ -1,8 +1,18 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import TechStack from '../components/TechStack'
+import BubbleText from '../components/BubbleText'
+import ButtonWrapper from '../components/ButtonWrapper'
+import Typewrite from '../components/Typewrite'
 
 function Home() {
+  const examples = [
+    '你好，我是田昊天。',
+    '欢迎来到我的个人网站！',
+    '这里记录了我的学习和项目经历。',
+    '希望你能喜欢这里的内容！',
+  ]
+
   return (
     <Layout>
       <div
@@ -13,13 +23,11 @@ function Home() {
       >
         <div className='hero-overlay'></div>
         <div className='hero-content text-neutral-content text-center'>
-          <div className='max-w-md'>
-            <h1 className='mb-5 text-5xl font-bold italic underline underline-offset-8'>
-              你好, 我是田昊天
-            </h1>
-            <p className='mb-5'>
-              欢迎来到我的个人网站！这里记录了我的学习和项目经历，以及一些兴趣爱好。
-            </p>
+          <div className='max-w-2xl flex flex-col gap-5 justify-center items-center'>
+            <Typewrite examples={examples} />
+            <hr className='border-neutral-300 w-full' />
+            <BubbleText text='我正在学习全栈开发，寻找实习与工作机会。若您对我感兴趣请与我联系！' />
+            <ButtonWrapper text='联系我' />
           </div>
         </div>
       </div>
