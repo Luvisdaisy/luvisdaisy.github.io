@@ -11,7 +11,7 @@ function ProjectPage() {
 
   // 从Summary.json获取项目数据
   useEffect(() => {
-    fetch('/projects/Summary.json')
+    fetch('/projects/summary.json')
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error('Error loading projects:', error))

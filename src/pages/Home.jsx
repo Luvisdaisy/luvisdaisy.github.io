@@ -4,6 +4,7 @@ import TechStack from '../components/TechStack'
 import BubbleText from '../components/BubbleText'
 import ButtonWrapper from '../components/ButtonWrapper'
 import Typewrite from '../components/Typewrite'
+import CubeButton from '../components/CubeButton'
 
 function Home() {
   const examples = [
@@ -27,7 +28,7 @@ function Home() {
             <Typewrite examples={examples} />
             <hr className='border-neutral-300 w-full' />
             <BubbleText text='我正在学习全栈开发，寻找实习与工作机会。若您对我感兴趣请与我联系！' />
-            <ButtonWrapper text='联系我' />
+            <CubeButton text='联系我' to='/contact' />
           </div>
         </div>
       </div>
