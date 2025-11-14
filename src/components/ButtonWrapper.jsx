@@ -40,12 +40,12 @@ const SpotlightButton = ({ text = 'Hover me' }) => {
     <motion.button
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
-      className='relative w-full max-w-xs overflow-hidden rounded-lg bg-slate-950 px-4 py-3 text-lg font-medium text-white'
+      className='relative w-full max-w-xs overflow-hidden rounded-lg bg-base-300 px-4 py-3 text-lg font-medium text-base-content transition-transform'
     >
       <span className='pointer-events-none relative z-10 mix-blend-difference'>{text}</span>
       <span
         ref={spanRef}
-        className='pointer-events-none absolute left-[50%] top-[50%] h-32 w-32 -translate-x-[50%] -translate-y-[50%] rounded-full bg-slate-100'
+        className='pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-base-100'
       />
     </motion.button>
   )

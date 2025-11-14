@@ -19,7 +19,7 @@ const Typewrite = ({ examples }) => {
   }, [examples.length])
 
   return (
-    <p className='mb-2.5 text-4xl font-light uppercase'>
+    <p className='mb-2.5 text-3xl font-light uppercase md:text-4xl'>
       <span className='ml-3'>
         {examples[exampleIndex].split('').map((l, i) => (
           <motion.span

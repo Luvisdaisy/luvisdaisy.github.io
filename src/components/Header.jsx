@@ -3,9 +3,9 @@ import { AiOutlineAlignRight } from 'react-icons/ai'
 import { useLocation, NavLink, Link } from 'react-router-dom'
 
 function Header() {
-  const themes = ['light', 'dark', 'garden', 'sunset']
+  const themes = ['cupcake', 'night', 'garden', 'sunset']
   const [currentTheme, setCurrentTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light'
+    return localStorage.getItem('theme') || 'cupcake'
   })
 
   useEffect(() => {
@@ -14,15 +14,15 @@ function Header() {
   }, [currentTheme])
 
   return (
-    <div className='navbar bg-base-100 shadow-sm'>
+    <header className='navbar bg-base-100 shadow-sm'>
       <div className='navbar-start'>
-        <Link className='btn btn-ghost text-xl' to='/'>
+        <Link to='/' className='btn btn-ghost text-xl'>
           HAOTIANTZZ
         </Link>
       </div>
 
-      <div className='navbar-center hidden lg:flex'>
-        <ul className='menu menu-horizontal px-1'>
+      <nav className='navbar-center hidden lg:flex'>
+        <ul className='menu menu-horizontal gap-1 px-1'>
           <li>
             <NavLink to='/education' className={({ isActive }) => (isActive ? 'menu-active' : '')}>
               教育经历
@@ -44,14 +44,14 @@ function Header() {
             </NavLink>
           </li>
         </ul>
-      </div>
+      </nav>
 
       <div className='navbar-end'>
         <select
           id='theme-selector'
           value={currentTheme}
           onChange={(e) => setCurrentTheme(e.target.value)}
-          className='select select-bordered select-sm w-24 mr-4'
+          className='select select-bordered select-sm mr-4 w-24'
         >
           {themes.map((theme) => (
             <option key={theme} value={theme}>
@@ -60,14 +60,14 @@ function Header() {
           ))}
         </select>
 
-        <div className='dropdown dropdown-end dropdown-bottom'>
+        <div className='dropdown dropdown-bottom dropdown-end'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
             <AiOutlineAlignRight className='h-7 w-7' />
           </div>
 
           <ul
             tabIndex='-1'
-            className='dropdown-content menu bg-base-100 rounded-box z-1 w-52 mt-3 p-2 shadow-sm'
+            className='menu dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow-lg'
           >
             <li>
               <NavLink
@@ -95,7 +95,7 @@ function Header() {
           </ul>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

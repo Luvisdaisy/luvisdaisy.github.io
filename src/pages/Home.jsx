@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import TechStack from '../components/TechStack'
 import BubbleText from '../components/BubbleText'
@@ -7,6 +7,10 @@ import Typewrite from '../components/Typewrite'
 import CubeButton from '../components/CubeButton'
 
 function Home() {
+  useEffect(() => {
+    document.title = 'haotiantzz - 首页'
+  }, [])
+
   const examples = [
     '你好，我是田昊天。',
     '欢迎来到我的个人网站！',
@@ -22,11 +26,11 @@ function Home() {
           backgroundImage: 'url(./img/hero.jpeg)',
         }}
       >
-        <div className='hero-overlay'></div>
-        <div className='hero-content text-neutral-content text-center'>
-          <div className='max-w-2xl flex flex-col gap-5 justify-center items-center'>
+        <div className='hero-overlay bg-opacity-60'></div>
+        <div className='hero-content text-center text-neutral-content'>
+          <div className='flex max-w-2xl flex-col items-center justify-center gap-6'>
             <Typewrite examples={examples} />
-            <hr className='border-neutral-300 w-full' />
+            <hr className='border-base-300 w-full' />
             <BubbleText text='我正在学习全栈开发，寻找实习与工作机会。若您对我感兴趣请与我联系！' />
             <CubeButton text='联系我' to='/contact' />
           </div>

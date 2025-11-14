@@ -3,11 +3,16 @@ import { motion, useScroll } from 'framer-motion'
 import Layout from '../components/Layout'
 import Timeline from '../components/Timeline'
 import ProjectCard from '../components/ProjectCard'
+import { AiOutlineDown } from 'react-icons/ai'
 
 function ProjectPage() {
   const [projects, setProjects] = useState([])
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollContainerRef = useRef(null)
+
+  useEffect(() => {
+    document.title = 'haotiantzz - 项目经历'
+  }, [])
 
   // 从Summary.json获取项目数据
   useEffect(() => {
@@ -46,39 +51,41 @@ function ProjectPage() {
 
   return (
     <Layout>
-      <div className='max-w-7xl mx-auto h-full'>
+      <div className='mx-auto h-full max-w-7xl p-4 md:p-6'>
         <motion.div
-          className='text-center mb-8'
+          className='mb-8 text-center'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className='mt-3 text-base-content/60 text-lg'>滚动查看我的项目历程</p>
+          <p className='mt-3 text-lg text-base-content/60'>滚动查看我的项目历程</p>
         </motion.div>
 
-        <div className='flex gap-8 h-[calc(100vh-240px)]'>
-          {/* 左侧时间线 */}
-          <Timeline projects={projects} activeIndex={activeIndex} onItemClick={scrollToProject} />
+        <div className='flex h-[calc(100vh-240px)] gap-8'>
+          {/* 左侧时间线 - 在大屏幕显示 */}
+          <div className='hidden lg:block'>
+            <Timeline projects={projects} activeIndex={activeIndex} onItemClick={scrollToProject} />
+          </div>
 
           {/* 右侧项目卡片滚动容器 */}
           <motion.div
-            className='w-3/5 relative'
+            className='relative w-full lg:w-3/5'
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div
               ref={scrollContainerRef}
-              className='h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth pr-4'
+              className='h-full snap-y snap-mandatory scroll-smooth overflow-y-auto pr-4'
               style={{
                 scrollbarWidth: 'thin',
-                scrollbarColor: '#570df8 rgba(0,0,0,0.1)',
+                scrollbarColor: 'hsl(var(--p)) hsl(var(--b1) / 0.1)',
               }}
             >
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
-                  className='h-full flex items-center justify-center snap-center px-4'
+                  className='flex h-full snap-center items-center justify-center px-4'
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
                     opacity: activeIndex === index ? 1 : 0.3,
@@ -101,44 +108,16 @@ function ProjectPage() {
             {/* 滚动提示 */}
             {activeIndex < projects.length - 1 && (
               <motion.div
-                className='absolute bottom-4 left-1/2 transform -translate-x-1/2 pointer-events-none'
+                className='pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 transform'
                 animate={{ y: [0, 8, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
               >
                 <div className='flex flex-col items-center gap-1 text-primary/60'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M19 9l-7 7-7-7'
-                    />
-                  </svg>
-                  <span className='text-xs font-medium'>继续滚动</span>
+                  <AiOutlineDown />
+                  <span className='text-lg font-medium'>继续滚动</span>
                 </div>
               </motion.div>
             )}
-
-            {/* 进度指示器 */}
-            {/* <div className='absolute top-1/2 right-0 transform -translate-y-1/2 flex flex-col gap-3'>
-              {projects.map((_, index) => (
-                <motion.div
-                  key={index}
-                  className={`w-1 rounded-full transition-all duration-300 ${
-                    activeIndex === index ? 'h-12 bg-primary' : 'h-6 bg-base-300'
-                  }`}
-                  animate={{
-                    height: activeIndex === index ? 48 : 24,
-                  }}
-                />
-              ))}
-            </div> */}
           </motion.div>
         </div>
       </div>
