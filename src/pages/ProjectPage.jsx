@@ -5,35 +5,17 @@ import Timeline from '../components/Timeline'
 import ProjectCard from '../components/ProjectCard'
 
 function ProjectPage() {
-  const projects = [
-    {
-      year: '2021年',
-      title: '电商平台重构',
-      description:
-        '主导完成电商平台的前端架构重构,采用微前端方案,提升了系统的可维护性和开发效率。使用React + TypeScript技术栈,实现了组件库的统一管理。',
-    },
-    {
-      year: '2022年',
-      title: '数据可视化大屏',
-      description:
-        '开发企业级数据可视化大屏项目,整合多源数据,实现实时数据展示。使用ECharts和D3.js构建交互式图表,支持自定义配置和主题切换。',
-    },
-    {
-      year: '2023年',
-      title: 'AI助手集成',
-      description:
-        '将AI对话能力集成到现有产品中,设计并实现了智能客服系统。优化了对话流程,提升了用户满意度30%以上。',
-    },
-    {
-      year: '2024年',
-      title: '移动端应用开发',
-      description:
-        '使用React Native开发跨平台移动应用,实现了与Web端的数据同步。优化了性能,应用启动时间减少50%,获得AppStore 4.8分好评。',
-    },
-  ]
-
+  const [projects, setProjects] = useState([])
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollContainerRef = useRef(null)
+
+  // 从Summary.json获取项目数据
+  useEffect(() => {
+    fetch('/projects/Summary.json')
+      .then((response) => response.json())
+      .then((data) => setProjects(data))
+      .catch((error) => console.error('Error loading projects:', error))
+  }, [])
 
   // 使用 useScroll 监听滚动进度
   const { scrollYProgress } = useScroll({
@@ -50,6 +32,7 @@ function ProjectPage() {
     return () => unsubscribe()
   }, [scrollYProgress, projects.length])
 
+  // 滚动到指定项目
   const scrollToProject = (index) => {
     const container = scrollContainerRef.current
     if (!container) return
@@ -63,8 +46,17 @@ function ProjectPage() {
 
   return (
     <Layout>
-      <div className='max-w-7xl mx-auto h-full flex flex-col'>
-        <div className='flex gap-8'>
+      <div className='max-w-7xl mx-auto h-full'>
+        <motion.div
+          className='text-center mb-8'
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className='mt-3 text-base-content/60 text-lg'>滚动查看我的项目历程</p>
+        </motion.div>
+
+        <div className='flex gap-8 h-[calc(100vh-240px)]'>
           {/* 左侧时间线 */}
           <Timeline projects={projects} activeIndex={activeIndex} onItemClick={scrollToProject} />
 
@@ -77,26 +69,29 @@ function ProjectPage() {
           >
             <div
               ref={scrollContainerRef}
-              className='h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth'
+              className='h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth pr-4'
               style={{
                 scrollbarWidth: 'thin',
-                scrollbarColor: '#570df8 transparent',
+                scrollbarColor: '#570df8 rgba(0,0,0,0.1)',
               }}
             >
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
-                  className='h-full flex items-center justify-center snap-center p-4'
+                  className='h-full flex items-center justify-center snap-center px-4'
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
-                    opacity: activeIndex === index ? 1 : 0.4,
+                    opacity: activeIndex === index ? 1 : 0.3,
                     scale: activeIndex === index ? 1 : 0.85,
+                    y: activeIndex === index ? 0 : 20,
                   }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
                 >
                   <ProjectCard
                     title={project.title}
                     description={project.description}
+                    year={project.year}
+                    stack={project.stack}
                     isActive={activeIndex === index}
                   />
                 </motion.div>
@@ -106,14 +101,14 @@ function ProjectPage() {
             {/* 滚动提示 */}
             {activeIndex < projects.length - 1 && (
               <motion.div
-                className='absolute bottom-8 left-1/2 transform -translate-x-1/2'
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
+                className='absolute bottom-4 left-1/2 transform -translate-x-1/2 pointer-events-none'
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
               >
-                <div className='text-center text-base-content/50'>
+                <div className='flex flex-col items-center gap-1 text-primary/60'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6 mx-auto'
+                    className='h-6 w-6'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -125,25 +120,26 @@ function ProjectPage() {
                       d='M19 9l-7 7-7-7'
                     />
                   </svg>
-                  <span className='text-xs'>滚动查看更多</span>
+                  <span className='text-xs font-medium'>继续滚动</span>
                 </div>
               </motion.div>
             )}
-          </motion.div>
-        </div>
 
-        {/* 底部导航点 */}
-        <div className='flex justify-center gap-2 mt-8'>
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToProject(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeIndex === index ? 'bg-primary w-8' : 'bg-base-300 hover:bg-base-content/30'
-              }`}
-              aria-label={`跳转到项目 ${index + 1}`}
-            />
-          ))}
+            {/* 进度指示器 */}
+            {/* <div className='absolute top-1/2 right-0 transform -translate-y-1/2 flex flex-col gap-3'>
+              {projects.map((_, index) => (
+                <motion.div
+                  key={index}
+                  className={`w-1 rounded-full transition-all duration-300 ${
+                    activeIndex === index ? 'h-12 bg-primary' : 'h-6 bg-base-300'
+                  }`}
+                  animate={{
+                    height: activeIndex === index ? 48 : 24,
+                  }}
+                />
+              ))}
+            </div> */}
+          </motion.div>
         </div>
       </div>
     </Layout>
