@@ -14,7 +14,7 @@ function Header() {
             <a href='/education'>教育经历</a>
           </li>
           <li>
-            <a>项目经历</a>
+            <a href='/projects'>项目经历</a>
           </li>
           <li>
             <a>关于我</a>

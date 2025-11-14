@@ -6,7 +6,6 @@ function Education() {
     <Layout>
       <div className='h-full flex flex-col'>
         <div className='flex-1 flex flex-col gap-6 overflow-hidden p-4'>
-          {/* 河南大学卡片 */}
           <div className='card bg-base-100 image-full flex-1 shadow-lg overflow-hidden relative group rounded-lg'>
             <figure>
               <img
@@ -31,7 +30,6 @@ function Education() {
             </div>
           </div>
 
-          {/* 莫那什大学卡片 */}
           <div className='card bg-base-100 image-full flex-1 shadow-lg overflow-hidden relative group rounded-lg'>
             <figure>
               <img

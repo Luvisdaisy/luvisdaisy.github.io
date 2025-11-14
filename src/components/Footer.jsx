@@ -10,10 +10,10 @@ function Footer() {
         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </aside>
       <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
-        <a>
+        <a href='mailto:haotiantzz@163.com'>
           <AiOutlineMail size={24} />
         </a>
-        <a>
+        <a href='https://github.com/luvisdaisy' target='_blank' rel='noopener noreferrer'>
           <AiOutlineGithub size={24} />
         </a>
         <a>
