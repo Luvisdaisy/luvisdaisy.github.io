@@ -15,7 +15,7 @@ function Home() {
         <div className='hero-content text-neutral-content text-center'>
           <div className='max-w-md'>
             <h1 className='mb-5 text-5xl font-bold italic underline underline-offset-8'>
-              你好，这里是田昊天
+              你好, 我是田昊天
             </h1>
             <p className='mb-5'>
               欢迎来到我的个人网站！这里记录了我的学习和项目经历，以及一些兴趣爱好。

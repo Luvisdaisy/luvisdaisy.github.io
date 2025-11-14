@@ -17,10 +17,10 @@ function Header() {
             <a href='/projects'>项目经历</a>
           </li>
           <li>
-            <a>关于我</a>
+            <a href='/about'>关于我</a>
           </li>
           <li>
-            <a>联系</a>
+            <a href='/contact'>联系</a>
           </li>
         </ul>
       </div>
@@ -38,13 +38,13 @@ function Header() {
               <a href='/education'>教育经历</a>
             </li>
             <li>
-              <a>项目经历</a>
+              <a href='/projects'>项目经历</a>
             </li>
             <li>
-              <a>关于我</a>
+              <a href='/about'>关于我</a>
             </li>
             <li>
-              <a>联系</a>
+              <a href='/contact'>联系</a>
             </li>
           </ul>
         </div>
