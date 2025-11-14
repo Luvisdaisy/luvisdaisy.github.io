@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-function Education() {
+function EducationPage() {
   return (
     <Layout>
       <div className='h-full flex flex-col'>
@@ -57,4 +57,4 @@ function Education() {
   )
 }
 
-export default Education
+export default EducationPage
