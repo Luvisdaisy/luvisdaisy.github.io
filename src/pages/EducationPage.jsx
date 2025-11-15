@@ -47,7 +47,7 @@ function EducationPage() {
               <p className='mt-4 text-center text-sm md:text-lg'>
                 课程内容：数据算法结构，操作系统，计算机网络，数据库系统，软件工程等。
                 <br />
-                竞赛成果：大学生创新创业大赛国家级二等奖，互联网+项目校级三等奖等。
+                竞赛成果：大学生创新创业大赛国家级二等奖，互联网+校奖等。
               </p>
             </div>
           </TiltCard>
