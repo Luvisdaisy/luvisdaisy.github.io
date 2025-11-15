@@ -14,5 +14,8 @@ export default defineConfig([
   },
   { files: ['**/*.json'], plugins: { json }, language: 'json/json', extends: ['json/recommended'] },
   { files: ['**/*.css'], plugins: { css }, language: 'css/css', extends: ['css/recommended'] },
+  {
+    ignores: ['dist/**/*', 'node_modules/**/*'],
+  },
   eslintConfigPrettier,
 ])

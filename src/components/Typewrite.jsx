@@ -8,7 +8,7 @@ const Typewrite = ({ examples }) => {
   const BOX_FADE_DURATION = 0.125
   const FADE_DELAY = 5
   const MAIN_FADE_DURATION = 0.25
-  const SWAP_DELAY_IN_MS = 5500
+  const SWAP_DELAY_IN_MS = 4000
 
   useEffect(() => {
     const intervalId = setInterval(() => {

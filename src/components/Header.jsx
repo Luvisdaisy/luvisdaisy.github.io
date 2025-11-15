@@ -24,6 +24,11 @@ function Header() {
       <nav className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal gap-1 px-1'>
           <li>
+            <NavLink to='/' className={({ isActive }) => (isActive ? 'menu-active' : '')}>
+              简介
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/education' className={({ isActive }) => (isActive ? 'menu-active' : '')}>
               教育经历
             </NavLink>
@@ -69,6 +74,11 @@ function Header() {
             tabIndex='-1'
             className='menu dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow-lg'
           >
+            <li>
+              <NavLink to='/' className={({ isActive }) => (isActive ? 'menu-active' : '')}>
+                简介
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to='/education'
