@@ -41,7 +41,6 @@ function Home() {
             <hr className='border-base-300 w-full' />
             <BubbleText text='我正在学习全栈开发，寻找实习与工作机会。' />
             <BubbleText text='若您对我感兴趣请与我联系！' />
-            <span>该网站可能在移动设备上显示不佳</span>
             <CubeButton text='联系我' to='/contact' />
           </div>
         </div>
