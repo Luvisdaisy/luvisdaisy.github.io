@@ -1,44 +1,47 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 ## Build & Dev Commands
 
-- `npm run dev` — start Vite dev server
-- `npm run build` — production build
-- `npm run preview` — preview production build locally
-- `npm run deploy` — build + deploy to GitHub Pages
+- `npm run dev` — start Next.js dev server
+- `npm run build` — production build (generates static export in `out/`)
+- `npm run start` — start production server
 - `npm run lint` — run ESLint
-- `npm run lint:fix` — run ESLint with auto-fix
-- `npm run format` — run Prettier formatting
 
 ## Architecture
 
-- **Framework**: React 19 SPA, plain JavaScript (no TypeScript)
-- **Build**: Vite 7
-- **Routing**: React Router v7 with BrowserRouter
-- **Styling**: Tailwind CSS v4 + DaisyUI v5 (themes: cupcake, night, garden, sunset)
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v3 with shadcn/ui components (Radix UI primitives)
+- **Theme**: Dark mode support via `next-themes`
+- **Icons**: lucide-react
 - **Animations**: Framer Motion
-- **Deployment**: GitHub Pages via `gh-pages` package + GitHub Actions
+- **Deployment**: Static export to GitHub Pages (via `out/` directory)
 
 ### Project Structure
 
-- `src/pages/` — page components (Home, Education, Projects, About, Contact)
-- `src/components/` — reusable components (Header, Footer, ThemeSelector, etc.)
-- `src/components/Layout.jsx` — wraps all routes with Header + Footer
-- `public/projects/summary.json` — static project data
+- `app/` — Next.js App Router pages and layouts
+- `components/ui/` — shadcn/ui component library
+- `components/` — custom components (Header, Footer, ThemeProvider)
+- `lib/utils.ts` — utility functions (cn helper for Tailwind)
 
 ### Routes
 
 | Path | Page |
 |------|------|
 | `/` | Home |
-| `/education` | Education |
-| `/projects` | Projects |
 | `/about` | About |
+| `/experience` | Experience |
+| `/projects` | Projects |
+| `/blog` | Blog |
+| `/blog/[slug]` | Blog post |
 | `/contact` | Contact |
 
-No backend. No global state management. Static data loaded from `public/`.
+Static data is loaded from files in `app/` directory (no external data source). Uses Next.js static params for dynamic routes.
 
 ## Code Style
 
-- **Prettier**: no semicolons, single quotes, JSX single quotes, trailing commas, 100 char line width, 2-space indent
-- **ESLint**: flat config with React hooks plugin and Prettier compatibility
+- **TypeScript**: Strict mode enabled
+- **Tailwind**: CSS variables for theming, dark mode via `class` strategy
+- **Components**: Use `cn()` utility from `lib/utils.ts` for conditional class merging
