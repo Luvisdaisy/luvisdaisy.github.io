@@ -74,7 +74,7 @@ export default function BlogPage() {
     : blogPosts.filter(post => post.category === activeCategory)
 
   return (
-    <div className="container mx-auto px-4 py-12 flex flex-col flex-1 min-h-0">
+    <div className="container mx-auto px-4 py-8 flex flex-col flex-1 min-h-0 max-w-4xl overflow-y-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

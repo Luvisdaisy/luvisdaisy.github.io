@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-3xl">
+    <div className="container mx-auto px-4 py-12 max-w-3xl overflow-y-auto">
       <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
         <Link href="/blog">
           <Button variant="ghost" className="mb-6">
