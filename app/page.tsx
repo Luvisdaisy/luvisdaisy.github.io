@@ -18,7 +18,7 @@ const socialLinks = [
 
 export default function HomePage() {
   return (
-    <div className="relative flex min-h-0 flex-1 items-center">
+    <div className="relative flex min-h-0 flex-1 items-center py-8">
       {/* Background Gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10" />
 

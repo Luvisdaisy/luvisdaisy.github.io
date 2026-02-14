@@ -91,7 +91,7 @@ I love watching movies across all genres, from blockbusters to indie films. Cine
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-8 min-h-[calc(100vh-9rem)] flex flex-col">
+    <div className="container mx-auto px-4 py-8 flex flex-col flex-1 min-h-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
