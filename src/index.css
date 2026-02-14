@@ -1,8 +1,0 @@
-/* eslint-disable */
-/* vscode-disable */
-
-@import 'tailwindcss';
-@plugin "@tailwindcss/typography";
-@plugin "daisyui" {
-  themes: cupcake, night, garden, sunset;
-}
