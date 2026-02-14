@@ -18,12 +18,12 @@ const socialLinks = [
 
 export default function HomePage() {
   return (
-    <div className="relative flex min-h-0 flex-1 items-center py-8">
+    <div className="relative flex min-h-[calc(100vh-4.2rem)] flex-1 items-center py-8">
       {/* Background Gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10" />
 
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Side - Personal Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -86,7 +86,7 @@ export default function HomePage() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20" />
-              <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-background shadow-2xl">
+              <Avatar className="w-48 h-48 md:w-64 md:h-64 border-4 border-background shadow-2xl">
                 <AvatarImage
                   src="/img/avatar.jpeg"
                   alt="Haotian"

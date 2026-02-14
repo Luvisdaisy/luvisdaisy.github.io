@@ -30,7 +30,7 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1 min-h-0">{children}</main>
+            <main className="flex-1 overflow-auto">{children}</main>
           </div>
         </ThemeProvider>
       </body>
